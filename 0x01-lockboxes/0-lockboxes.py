@@ -9,12 +9,16 @@ input and returns True if all the boxes can be unlocked, and False otherwise.
 The algorithm used in the canUnlockAll function is as follows:
 1. Create a set called visited to keep track of the boxes that have been visited.
 2. Add the first box (index 0) to the visited set.
-3. Create a stack to store the boxes that need to be visited, and initialize it with the first box.
+3. Create a stack to store the boxes that need to be visited,
+and initialize it with the first box.
 4. Iterate through the stack until it is empty:
     - Pop the top box from the stack.
     - Iterate through the keys in the current box.
-    - If the key opens a new box (index within the range of the boxes list) and the box has not been visited yet, add the box to the visited set and push it onto the stack.
-5. After the iteration, if the number of visited boxes is equal to the total number of boxes, return True. Otherwise, return False.
+    - If the key opens a new box (index within the range of
+    the boxes list) and the box has not been visited yet,
+    add the box to the visited set and push it onto the stack.
+5. After the iteration, if the number of visited boxes is equal
+to the total number of boxes, return True. Otherwise, return False.
 """
 
 
@@ -23,7 +27,8 @@ def canUnlockAll(boxes):
     Check if all boxes in the given list can be unlocked.
 
     Args:
-        boxes (list): A list of lists representing the lockboxes and their corresponding keys.
+        boxes (list): A list of lists representing the
+        lockboxes and their corresponding keys.
 
     Returns:
         bool: True if all boxes can be unlocked, False otherwise.
