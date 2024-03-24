@@ -1,26 +1,30 @@
 #!/usr/bin/python3
 """
-Module for calculating the fewest number of operations needed to
-result in exactly n H characters in the file.
+Module for calculating the fewest number of operations needed to result in exactly n H characters in the file.
 """
-import random
 
 
-
-def min_operations(n):
+def minOperations(n):
     """
-    Calculate the minimum number of operations needed to
-    get n H characters in the file.
-
-    :param n: int, the number of H characters to get in the file
-    :return: int, the minimum number of operations needed to get n H characters
+    Calculate the fewest number of operations needed to result in exactly n H characters in the file.
+    
+    Args:
+        n (int): The desired number of H characters.
+        
+    Returns:
+        int: The fewest number of operations needed. If n is impossible to achieve, return 0.
     """
-    if n == 0:
+    if n <= 1:
         return 0
-    dp = [0] * (n + 1)
-    for i in range(1, n + 1):
-        if i == 1:
-            dp[i] = 1
+    
+    operations = 0
+    divisor = 2
+    
+    while n > 1:
+        if n % divisor == 0:
+            n //= divisor
+            operations += divisor
         else:
-            dp[i] = min(dp[i - 1], dp[i - 2] + 1)
-    return dp[n]
+            divisor += 1
+    
+    return operations
