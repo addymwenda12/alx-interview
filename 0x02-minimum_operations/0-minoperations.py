@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 import random
 """
 Module for calculating the fewest number of operations needed to
