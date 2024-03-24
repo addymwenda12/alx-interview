@@ -1,9 +1,10 @@
 #!/usr/bin/python3
-import random
 """
 Module for calculating the fewest number of operations needed to
 result in exactly n H characters in the file.
 """
+import random
+
 
 
 def min_operations(n):
