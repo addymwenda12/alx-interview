@@ -17,15 +17,13 @@ def validUTF8(data):
     count = 0
     for num in data:
         if count == 0:
-            if (num >> 5) == 0b110 and (num & 0b10000) == 0:
+            if (num >> 5) == 0b110:
                 count = 1
-            elif (num >> 4) == 0b1110 and (num & 0b1000) == 0:
+            elif (num >> 4) == 0b1110:
                 count = 2
-            elif (num >> 3) == 0b11110 and (num & 0b100) == 0:
+            elif (num >> 3) == 0b11110:
                 count = 3
-            elif (num >> 7) == 0:
-                return 0
-            else:
+            elif (num >> 7):
                 return False
         else:
             if (num >> 6) != 0b10:
