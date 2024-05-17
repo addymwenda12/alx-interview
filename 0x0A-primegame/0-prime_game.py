@@ -65,16 +65,12 @@ def isWinner(x, nums):
     if x <= 0 or x > len(nums):
         return None
 
-    max_num = max(nums)
-    primes = generate_primes(max_num)
-
     scores = {'Maria': 0, 'Ben': 0}
     for n in nums:
         if n <= 0:
             scores['Ben'] += 1
         else:
-            primes_n = primes[:n+1]
-            winner = play_round(primes_n)
+            winner = play_round(n)
             scores[winner] += 1
     if scores['Maria'] > scores['Ben']:
         return 'Maria'
