@@ -46,8 +46,7 @@ def play_round(n):
                 primes[i] = False
             player = 1 - player
         else:
-            break
-    return 'Maria' if player else 'Ben'
+            return 'Maria' if player else 'Ben'
 
 
 def isWinner(x, nums):
