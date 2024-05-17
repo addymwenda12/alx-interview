@@ -50,7 +50,7 @@ def play_round(n):
     return 'Maria' if player else 'Ben'
 
 
-def is_winner(x, nums):
+def isWinner(x, nums):
     """
     Simulate x rounds of the game and determine the overall winner.
 
