@@ -62,10 +62,16 @@ def isWinner(x, nums):
         str: The name of the player who wins the most rounds,
         or None if there is a tie.
     """
+    if x <= 0 or x > len(nums):
+        return None
+
     scores = {'Maria': 0, 'Ben': 0}
     for n in nums:
-        winner = play_round(n)
-        scores[winner] += 1
+        if n <= 0:
+            scores['Ben'] += 1
+        else:
+            winner = play_round(n)
+            scores[winner] += 1
     if scores['Maria'] > scores['Ben']:
         return 'Maria'
     elif scores['Maria'] < scores['Ben']:
